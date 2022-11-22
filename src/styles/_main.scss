@@ -1,0 +1,283 @@
+#main {
+    margin-top: 65px;
+    display: flex;
+
+    #aside {
+        width: 20%;
+        min-height: 100vh;
+        border-right: 1px solid var(--bg-dark-border);
+        padding: 20px;
+
+        button {
+            display: block;
+            padding: 10px 20px;
+            margin-bottom: 5px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                background: #666;
+            }
+
+            span:first-child {
+                display: inline-block;
+                margin-right: 5px;
+                vertical-align: -3px;
+            }
+        }
+    }
+
+    #contents {
+        width: 80%;
+        padding: 20px;
+
+        h2 {
+            padding: 5px 0;
+            margin-bottom: 10px;
+
+            em {
+                color: #eaa423;
+            }
+        }
+    }
+}
+
+.videos__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    >div {
+        width: 24%;
+        margin-bottom: 1%;
+        background: #1a1a1a;
+
+        .boxInfo {
+            padding: 10px;
+
+            a {
+                display: block;
+            }
+
+            .videoTitle {
+                display: block;
+                height: 48px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+            .channelName {
+                display: block;
+                font-size: 14px;
+                color: #999;
+            }
+        }
+    }
+}
+
+#videoCont__inner {
+    width: 80%;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .videoCont__cont {
+        width: 69.5%;
+        height: 100%;
+
+        .play {
+            width: 100%;
+            position: relative;
+            padding-bottom: 27.65%;
+            margin-bottom: 20px;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+            }
+        }
+
+        .desc {
+            width: 100%;
+            height: 100px;
+
+            .title {
+                font-size: 24px;
+            }
+            .channel a {
+                display: inline-block;
+                margin-top: 5px;
+                color: #999;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .descInfo {
+                display: flex;
+                justify-content: flex-end;
+
+                em {
+                    color: #999;
+                    font-weight: 300;
+                    display: inline-block;
+                    padding: 0 8px;
+                }
+            }
+        }
+    }
+
+    .videoCont__list {
+        width: 29.5%;
+        height: 100%;
+    }
+}
+
+#videoCont__inner {
+    .videoCont__list.side {
+        display: flex;
+        flex-wrap: wrap;
+
+        .box {
+            width: 100%;
+
+            .boxInfo {
+                background: #000;
+                padding: 10px 0;
+            }
+        }
+    }
+}
+
+#channelConts {
+    
+
+    .channel-header {
+        width: 100%;
+        height: 400px;
+        background-position: center center;
+        background-size: cover;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            backdrop-filter: blur(3px);
+        }
+    }
+
+    .channel-info {
+        position: absolute;
+        left: 43%;
+        top: 280px;
+
+        .channelDetailInfo {
+            margin-top: 20px;
+
+            span {
+                font-weight: 300;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        .channelTitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                position: relative;
+            }
+            h3 {
+                margin-top: 10px;
+                font-size: 30px;
+                font-weight: 700;
+                text-align: center;
+            }
+        }
+    }
+
+    .channel-videos {
+        padding: 20px;
+        margin-top: 250px;
+    }
+}
+
+// 반응형
+@media (max-width: 800px) {
+    #main {
+        flex-wrap: wrap;
+        width: 100%;
+
+        #aside {
+            margin-top: 50px;
+            width: 100%;
+            min-height: 0;
+        }
+
+        #contents {
+            width: 100%;
+        }
+    }
+
+    .videos__inner {
+        div {
+            width: 100%;
+        }
+
+        .box {
+            margin-bottom: 20px;
+        }
+    }
+
+    .videoConts {
+        flex-wrap: wrap;
+
+        .video__wrap {
+            width: 100%;
+        }
+
+        .video__aside {
+            width: 100%;
+        }
+    }
+
+    #videoCont__inner {
+        flex-wrap: wrap;
+        width: 100%;
+
+        .videoCont__cont {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .videos__inner {
+        width: 100%;
+    }
+
+    #videoCont__inner {
+        .videoCont__list {
+            width: 100%;
+        }
+    }
+}
