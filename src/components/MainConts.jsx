@@ -6,7 +6,7 @@ import { Category, Videos } from './';
 // import dummy from '../utils/dummy.json';
 
 const MainConts = () => {
-  const [selectCategory, setSelectCategory] = useState('cozyrain');
+  const [selectCategory, setSelectCategory] = useState('Cozy Rain');
   // const [videos, setVideos] = useState(dummy.items); - 터질때 사용할것
   const [videos, setVideos] = useState(null);
 
